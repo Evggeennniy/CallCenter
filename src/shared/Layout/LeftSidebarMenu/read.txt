@@ -1,0 +1,34 @@
+const menuSections = [
+  {
+    title: "MAIN",
+    items: [
+      {
+        panelId: "dashboard",
+        label: "Dashboard",
+        icon: "dashboard",
+        badge: "30",
+        subMenu: [
+          { label: "CRM", path: "/dashboard/crm/" },
+          {
+            label: "Project Management",
+            path: "/dashboard/project-management/",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "APPS",
+    items: [
+      {
+        label: "To Do List",
+        path: "/apps/to-do-list/",
+        icon: "format_list_bulleted",
+      },
+      { label: "Calendar", path: "/apps/calendar/", icon: "date_range" },
+      { label: "Logout", path: "/authentication/logout/", icon: "logout" },
+    ],
+  },
+];
+
+//example of how to use the menuSections in a component
