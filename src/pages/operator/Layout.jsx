@@ -6,7 +6,7 @@ import TopNavigation from "../../widgets/operator/nav-section/TopNavigation";
 function Layout({ children }) {
   const { active, toggleActive } = useNavToggle();
   return (
-    <div className={`main-wrapper-content ${active ? "active" : ""}`}>
+    <div className={`${active ? "active" : ""}`}>
       <LeftNavigation toggleActive={toggleActive} />
       <TopNavigation toggleSidebar={toggleActive} />
 

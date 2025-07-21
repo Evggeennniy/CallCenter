@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
 
 import Dashboard from "../pages/operator/dashboard/Dashboard";
 import MainWrapper from "../shared/Layout/MainWrapper";
@@ -9,14 +9,12 @@ import Scripts from "../pages/operator/scripts/Scripts";
 export default function AppRoutes() {
   return (
     <BrowserRouter>
-      <MainWrapper>
-        <Routes>
-          <Route path="/operator/dashboard" element={<Dashboard />} />
-          <Route path="/operator/lms" element={<Lms />} />
-          <Route path="/operator/rules" element={<Rules />} />
-          <Route path="/operator/scripts" element={<Scripts />} />
-        </Routes>
-      </MainWrapper>
+      <Routes>
+        <Route path="/operator/dashboard" element={<Dashboard />} />
+        <Route path="/operator/lms" element={<Lms />} />
+        <Route path="/operator/rules" element={<Rules />} />
+        <Route path="/operator/scripts" element={<Scripts />} />
+      </Routes>
     </BrowserRouter>
   );
 }
