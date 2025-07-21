@@ -56,7 +56,7 @@ const LeftSidebarMenu = ({ toggleActive, menuSections = [], logo }) => {
             {logo || (
               <>
                 <img
-                  src="/images/logo.svg"
+                  src="/img/logo.svg"
                   alt="logo-icon"
                   width={92}
                   height={35}

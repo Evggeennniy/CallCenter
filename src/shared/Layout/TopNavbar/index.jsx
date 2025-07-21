@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
-import { AppBar, Toolbar, IconButton, Box } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { AppBar, Toolbar, Box, Button, } from "@mui/material";
+import CardModal from './CardModal';
 
 const TopNavbar = ({
   toggleActive,
@@ -23,6 +24,9 @@ const TopNavbar = ({
     document.addEventListener("scroll", handleScroll);
     return () => document.removeEventListener("scroll", handleScroll);
   }, [stickyScroll]);
+  
+  const [openCard, setOpenCard] = useState(false);
+  const [cardValue, setCardValue] = useState("");
 
   return (
     <div className="top-navbar-dark">
@@ -67,12 +71,44 @@ const TopNavbar = ({
               }}
             >
               {rightContent}
+              <Button
+                variant="outlined"
+                sx={{
+                  borderRadius: "8px",
+                  color: "var(--blackColor, #232B3E)",
+                  borderColor: "#232B3E",
+                  background: "transparent",
+                  fontWeight: 500,
+                  px: 2,
+                  py: 1,
+                  ml: 2,
+                  textTransform: "none",
+                  fontSize: 15,
+                  '&:hover': {
+                    borderColor: '#6366F1',
+                    color: '#232B3E'
+                  },
+                  '.dark-theme &': {
+                    color: '#fff'
+                  }
+                }}
+                onClick={() => setOpenCard(true)}
+              >
+                Ваша картка
+              </Button>
             </Box>
           </Toolbar>
         </Box>
 
         {bottomNav}
       </AppBar>
+      <CardModal
+        open={openCard}
+        onClose={() => setOpenCard(false)}
+        cardValue={cardValue}
+        setCardValue={setCardValue}
+        onSave={() => {/* TODO: handle save */}}
+      />
     </div>
   );
 };
