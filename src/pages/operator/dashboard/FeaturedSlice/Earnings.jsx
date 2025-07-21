@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Card, Box, Typography, } from "@mui/material";
-import EarningsModal from '../../shared/Layout/EarningsModal';
+import EarningsModal from '../../../../shared/Layout/EarningsModal';
 
 const paymentsData = [
   { date: "01.07.2025", hours: 45, debt: "730₴", percent: 5, salary: "18 030₴", rating: 96 },

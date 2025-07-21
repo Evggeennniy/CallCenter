@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Card, Box, Typography, Divider } from "@mui/material";
 import "react-calendar/dist/Calendar.css";
-import PaymentsModal from "../../shared/Layout/PaymentsModal";
+import PaymentsModal from "../../../../shared/Layout/PaymentsModal";
 
 const Payments = () => {
   const [open, setOpen] = useState(false);

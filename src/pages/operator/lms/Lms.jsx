@@ -1,8 +1,8 @@
 import React from "react";
 import Layout from "../Layout";
-import NoticeBoard from "../../../widgets/FeaturedSlice/NoticeBoard";
-import QualificationWidget from "../../../widgets/FeaturedSlice/QualificationWidget";
-import CrmTrainingWidget from "../../../widgets/FeaturedSlice/CrmTrainingWidget";
+import NoticeBoard from "../lms/components/NoticeBoard";
+import QualificationWidget from "../lms/components/QualificationWidget";
+import CrmTrainingWidget from "../lms/components/CrmTrainingWidget";
 
 function Lms() {
   return (

@@ -2,13 +2,13 @@ import React from "react";
 import { Box } from "@mui/material";
 import Layout from "../Layout";
 import Welcome from "../../../widgets/Welcome";
-import ComboDays from "../../../widgets/FeaturedSlice/ComboDays";
-import Earnings from "../../../widgets/FeaturedSlice/Earnings";
-import Payments from "../../../widgets/FeaturedSlice/Payments";
-import WorkChart from "../../../widgets/FeaturedSlice/WorkChart";
-import RatingTable from "../../../widgets/FeaturedSlice/RatingTable";
-import CallsTable from "../../../widgets/FeaturedSlice/CallsTable";
-import CrmTable from "../../../widgets/FeaturedSlice/CrmTable";
+import ComboDays from "../dashboard/FeaturedSlice/ComboDays";
+import Earnings from "../dashboard/FeaturedSlice/Earnings";
+import Payments from "../dashboard/FeaturedSlice/Payments";
+import WorkChart from "../dashboard/FeaturedSlice/WorkChart";
+import RatingTable from "../dashboard/FeaturedSlice/RatingTable";
+import CallsTable from "../dashboard/FeaturedSlice/CallsTable";
+import CrmTable from "../dashboard/FeaturedSlice/CrmTable";
 
 const Dashboard = () => {
   return (
