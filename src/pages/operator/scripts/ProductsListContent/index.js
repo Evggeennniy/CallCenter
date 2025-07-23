@@ -10,75 +10,11 @@ import {
   TableBody,
   TableCell,
   TableContainer,
-  TableFooter,
-  TablePagination,
   TableRow,
   Paper,
-  IconButton,
   TableHead,
-  Button,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import { useTheme } from "@mui/material/styles";
-import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
-import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
-
-function TablePaginationActions({ count, page, rowsPerPage, onPageChange }) {
-  const theme = useTheme();
-
-  const handleBackButtonClick = (event) => {
-    onPageChange(event, page - 1);
-  };
-
-  const handleNextButtonClick = (event) => {
-    onPageChange(event, page + 1);
-  };
-
-  return (
-    <Box
-      sx={{
-        flexShrink: 0,
-        display: "flex",
-        gap: "10px",
-        padding: "14px 20px",
-      }}
-    >
-      <IconButton
-        onClick={handleBackButtonClick}
-        disabled={page === 0}
-        aria-label="previous page"
-        sx={{
-          borderRadius: "4px",
-          padding: "4px",
-        }}
-        className="border"
-      >
-        {theme.direction === "rtl" ? (
-          <KeyboardArrowRight />
-        ) : (
-          <KeyboardArrowLeft />
-        )}
-      </IconButton>
-
-      <IconButton
-        onClick={handleNextButtonClick}
-        disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-        aria-label="next page"
-        sx={{
-          borderRadius: "4px",
-          padding: "4px",
-        }}
-        className="border"
-      >
-        {theme.direction === "rtl" ? (
-          <KeyboardArrowLeft />
-        ) : (
-          <KeyboardArrowRight />
-        )}
-      </IconButton>
-    </Box>
-  );
-}
 
 function createData(
   orderID,
@@ -402,22 +338,6 @@ const ProductsListContent = () => {
     row.productName.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - filteredRows.length) : 0;
-
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
-    setPage(0);
-  };
-
-  const handleSearch = (event) => {
-    setSearchTerm(event.target.value);
-    setPage(0); // Reset to the first page when searching
-  };
 
   return (
     <>
@@ -432,6 +352,9 @@ const ProductsListContent = () => {
       >
   
         <Box>
+          <h1 style={{ color: "#fff", fontSize: "24px", marginBottom: "20px" }}>
+        Скрипти та характеристики
+      </h1>
           <TableContainer
             component={Paper}
             sx={{
@@ -503,11 +426,6 @@ const ProductsListContent = () => {
                     </TableCell>
                   </TableRow>
                 ))}
-                {emptyRows > 0 && (
-                  <TableRow style={{ height: 53 * emptyRows }}>
-                    <TableCell className="border-bottom" colSpan={3} />
-                  </TableRow>
-                )}
               </TableBody>
             </Table>
           </TableContainer>
