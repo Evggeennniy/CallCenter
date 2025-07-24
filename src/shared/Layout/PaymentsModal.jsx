@@ -39,16 +39,6 @@ const PaymentsModal = ({ open, onClose, date, setDate }) => (
             value={date}
             onChange={setDate}
             locale="uk-UA"
-            prevLabel={<span style={{fontSize:24, color:'#232B3E'}} className="calendar-nav-arrow">&#8592;</span>}
-            nextLabel={<span style={{fontSize:24, color:'#232B3E'}} className="calendar-nav-arrow">&#8594;</span>}
-            navigationLabel={({ date, label }) => (
-              <Typography sx={{ color: '#232B3E', fontWeight: 500, fontSize: 20, '.dark-theme &': { color: '#fff' } }}>{label}</Typography>
-            )}
-            tileClassName={({ date: d }) =>
-              d.getDate() === 24 && d.getMonth() === 7 && d.getFullYear() === 2025 ? 'custom-selected' : ''
-            }
-            formatShortWeekday={(locale, date) => ['ПН','ВТ','СР','ЧТ','ПТ','СБ','НД'][date.getDay() === 0 ? 6 : date.getDay() - 1]}
-            showNeighboringMonth={false}
           />
           <style>{`
             .react-calendar {
@@ -96,12 +86,12 @@ const PaymentsModal = ({ open, onClose, date, setDate }) => (
             }
             .react-calendar__month-view__weekdays {
               text-align: center;
-              color: #B0B8D9;
+              color:rgb(255, 255, 255);
               font-weight: 500;
               font-size: 16px;
             }
             .dark-theme .react-calendar__month-view__weekdays {
-              color: #B0B8D9;
+              color:rgb(255, 255, 255);
             }
             .react-calendar__month-view__weekdays__weekday {
               padding: 8px 0;
@@ -124,7 +114,7 @@ const PaymentsModal = ({ open, onClose, date, setDate }) => (
               color: #fff !important;
             }
             .react-calendar__tile:enabled:hover {
-              background: #ECEEF2;
+              background:rgb(255, 255, 255);
               color: #232B3E;
             }
             .dark-theme .react-calendar__tile:enabled:hover {

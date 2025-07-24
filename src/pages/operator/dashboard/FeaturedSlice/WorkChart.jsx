@@ -29,7 +29,7 @@ const WorkChart = () => (
         <Typography sx={{ color: 'var(--bodyColor)', fontWeight: 400, fontSize: 16, mb: 0.5 }}>
           Недопрацьовані години
         </Typography>
-        <Typography sx={{ color: 'var(--blackColor)', '.dark-theme &': { color: 'var(--whiteColor)' } }} style={{fontWeight: 700, fontSize:'22px',}}>
+        <Typography sx={{  '.dark-theme &': { color: 'var(--whiteColor)' } }} style={{fontWeight: 700, fontSize:'22px',}}>
           6 год 45 хв
         </Typography>
       </Box>

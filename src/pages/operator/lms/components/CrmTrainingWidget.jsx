@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Box, Typography, Link } from "@mui/material";
+import { Card, Box, Typography, Link, Button } from "@mui/material";
 
 const lessons = [
   {
@@ -70,7 +70,7 @@ const CrmTrainingWidget = () => {
 
         {open && (
           <Box sx={{ mx: { xs: "-20px", md: "-25px" } }}>
-            {lessons.map((lessons, index) => (
+            {lessons.map((lesson, index) => (
               <Box
                 key={index}
                 className="border-bottom lcbpm-none"
@@ -94,7 +94,7 @@ const CrmTrainingWidget = () => {
                     sx={{
                       width: "40px",
                       height: "40px",
-                      bgcolor: lessons.iconBg,
+                      bgcolor: lesson.iconBg,
                       borderRadius: "50%",
                       display: "flex",
                       alignItems: "center",
@@ -102,7 +102,7 @@ const CrmTrainingWidget = () => {
                       flexShrink: 0,
                     }}
                   >
-                    <img src={lessons.icon} alt={lessons.title} width={20} height={20} />
+                    <img src={lesson.icon} alt={lesson.title} width={20} height={20} />
                   </Box>
 
                   <Box>
@@ -111,8 +111,8 @@ const CrmTrainingWidget = () => {
                       sx={{ fontSize: "14px", fontWeight: 500, mb: "4px" }}
                       className="text-black"
                     >
-                      <Link href={lessons.link} className="text-black">
-                        {lessons.title}
+                      <Link href={lesson.link} className="text-black">
+                        {lesson.title}
                       </Link>
                     </Typography>
 
@@ -124,38 +124,58 @@ const CrmTrainingWidget = () => {
                         mb: "4px",
                       }}
                     >
-                      {lessons.description}
+                      {lesson.description}
                     </Typography>
                   </Box>
                 </Box>
 
-                <Link
-                  href={lessons.link}
-                  sx={{
-                    width: "40px",
-                    height: "40px",
-                    borderRadius: "50%",
-                    color: "grey.400",
-                    textAlign: "center",
-                    transition: "all 0.3s",
-                    padding: "0",
-                    display: "inline-block",
-                    flexShrink: 0,
+                <Box sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                  {!lesson.completed && (
+                    <Button
+                      sx={{
+                        width: "132px",
+                        height: "36px",
+                        bgcolor: "#605DFF",
+                        textTransform: "none",
+                        fontWeight: 500,
+                        borderRadius: "20px",
+                        "&:hover": {
+                          bgcolor: "#504DFF",
+                        },
+                      }}
+                      style={{ color: "white" }}
+                    >
+                      Я пройшов(ла)
+                    </Button>
+                  )}
+                  <Link
+                    href={lesson.link}
+                    sx={{
+                      width: "40px",
+                      height: "40px",
+                      borderRadius: "50%",
+                      color: "grey.400",
+                      textAlign: "center",
+                      transition: "all 0.3s",
+                      padding: "0",
+                      display: "inline-block",
+                      flexShrink: 0,
 
-                    "&:hover": {
-                      bgcolor: "primary.main",
-                      color: "white !important",
-                    },
-                  }}
-                  className="border"
-                >
-                  <i
-                    className="material-symbols-outlined"
-                    style={{ fontSize: "22px", lineHeight: "40px" }}
+                      "&:hover": {
+                        bgcolor: "primary.main",
+                        color: "white !important",
+                      },
+                    }}
+                    className="border"
                   >
-                    arrow_outward
-                  </i>
-                </Link>
+                    <i
+                      className="material-symbols-outlined"
+                      style={{ fontSize: "22px", lineHeight: "40px" }}
+                    >
+                      {lesson.completed ? "check" : "arrow_outward"}
+                    </i>
+                  </Link>
+                </Box>
               </Box>
             ))}
           </Box>
@@ -164,4 +184,4 @@ const CrmTrainingWidget = () => {
   );
 };
 
-export default CrmTrainingWidget; 
+export default CrmTrainingWidget;

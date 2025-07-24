@@ -49,9 +49,9 @@ const ComboDays = () => {
           <Typography style={{ color: '#8695AA', fontWeight: 400, fontSize:'14px', lineHeight:'21px', letterSpacing:0,  }}>
             Комбо-дні
           </Typography>
-          <Typography style={{ color: '#FFFFFF', fontWeight: 700, fontSize:'20px' }}>
+          <h1 style={{ fontWeight: 700, fontSize:'20px' }}>
             4 дні поспіль
-          </Typography>
+          </h1>
         </Box>
       </Card>
       <Dialog open={open} onClose={() => setOpen(false)} maxWidth="lg" fullWidth
@@ -75,8 +75,8 @@ const ComboDays = () => {
             </span>
           </Box>
           <Box sx={{ p: 2, width: '100%' }}>
-            <Typography sx={{ fontWeight: 500, mb: 3, fontSize: 18, display: 'flex', alignItems: 'center' }}>
-              <span style={{ fontSize: 22, color: "#fff", marginRight: 10 }}>ⓘ</span> В кінці місяця виберіть приз
+            <Typography sx={{ fontWeight: 500, mb: 3, fontSize: 18, display: 'flex', alignItems: 'center' }} style={{ color: '#fff' }}>
+              <span style={{ fontSize: 22, marginRight: 10 }}>ⓘ</span> В кінці місяця виберіть приз
             </Typography>
             <Box sx={{ display: "flex", flexDirection: 'row', gap: 3, mb: 3 }}>
               {prizes.map((prize, i) => (
