@@ -7,6 +7,7 @@ import Rules from "../pages/operator/rules/Rules";
 import Scripts from "../pages/operator/scripts/Scripts";
 import ScriptsClient from "../pages/client/scripts/ScriptsClient";
 import FAQClient from "../pages/client/faq/FAQClient";
+import ClientScriptDetails from "../pages/client/script-details/ScriptDetails";
 
 export default function AppRoutes() {
   return (
@@ -18,6 +19,10 @@ export default function AppRoutes() {
         <Route path="/operator/scripts" element={<Scripts />} />
         <Route path="/client/dashboard" element={<DashboardClient />} />
         <Route path="/client/scripts" element={<ScriptsClient />} />
+        <Route
+          path="/client/scripts/:scriptId"
+          element={<ClientScriptDetails />}
+        />
         <Route path="/client/faq" element={<FAQClient />} />
       </Routes>
     </BrowserRouter>

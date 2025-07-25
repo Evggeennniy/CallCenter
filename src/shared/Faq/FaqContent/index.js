@@ -63,13 +63,13 @@ const FaqAccordion = ({ items = [] }) => {
   };
 
   return (
-    <Card
+    <Box
       sx={{
         boxShadow: "none",
         borderRadius: "7px",
         mb: "25px",
       }}
-      className="rmui-card"
+      // className="rmui-card"
     >
       <Box sx={{ width: "100%" }}>
         {items.map((item, index) => {
@@ -79,7 +79,7 @@ const FaqAccordion = ({ items = [] }) => {
               key={panelId}
               expanded={expanded === panelId}
               onChange={handleChange(panelId)}
-              className="toc-accordion bg-f6f7f9"
+              className="toc-accordion rmui-card"
               sx={{
                 border: "none",
                 borderRadius: "3px",
@@ -90,7 +90,7 @@ const FaqAccordion = ({ items = [] }) => {
               <AccordionSummary
                 aria-controls={`${panelId}-content`}
                 id={`${panelId}-header`}
-                className="bg-f6f7f9"
+                className="rmui-card"
                 sx={{
                   padding: "9px 25px",
                   borderRadius: "3px",
@@ -120,7 +120,7 @@ const FaqAccordion = ({ items = [] }) => {
           );
         })}
       </Box>
-    </Card>
+    </Box>
   );
 };
 

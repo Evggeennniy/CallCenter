@@ -11,6 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import StyledTable from "../../../../shared/StyledTable/StyledTable";
+import { useNavigate } from "react-router-dom";
 const productStats = [
   {
     icon: "📱",
@@ -42,6 +43,11 @@ const productStats = [
   },
 ];
 const TabContent = ({ tabIndex }) => {
+  const navigate = useNavigate();
+
+  const handleClick = (scriptId) => {
+    navigate(`/client/scripts/${scriptId}`);
+  };
   if (tabIndex === 0) {
     return (
       <Card sx={{ px: 4, py: 3, borderRadius: "14px" }}>
@@ -53,7 +59,7 @@ const TabContent = ({ tabIndex }) => {
           rows={productStats}
           renderRow={(product, index) => (
             // <TableRow key={index}>
-            <TableRow key={index}>
+            <TableRow onClick={() => handleClick("cross" + index)} key={index}>
               <TableCell
                 className="text-black border-bottom"
                 sx={{ padding: "14px 20px", fontSize: 14 }}
@@ -114,8 +120,7 @@ const TabContent = ({ tabIndex }) => {
         headers={["Назва товару", "Час відкриття", "id", "Кількість", "", ""]}
         rows={productStats}
         renderRow={(product, index) => (
-          // <TableRow key={index}>
-          <TableRow key={index}>
+          <TableRow onClick={() => handleClick("main" + index)} key={index}>
             <TableCell
               className="text-black border-bottom"
               sx={{ padding: "14px 20px", fontSize: 14 }}
@@ -161,7 +166,6 @@ const TabContent = ({ tabIndex }) => {
               sx={{ padding: "14px 20px", fontSize: 14 }}
             ></TableCell>
           </TableRow>
-          // </TableRow>
         )}
       />
     </Card>
